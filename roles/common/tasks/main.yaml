@@ -1,9 +1,13 @@
-- name: remove existing directory 
+- name: remove existing directory
+  tags:
+  - deployment 
   ansible.builtin.file:
     path: "{{ APP_LOCAION }}" # backend folder is /app, frontend /usr/share/nginx/html
     state: absent
 
-- name: creating app directory 
+- name: creating app directory
+  tags:
+  - deployment 
   ansible.builtin.file:
     path: "{{ APP_LOCAION }}" # backend folder is /app, frontend /usr/share/nginx/html
     state: directory
